@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import axios from 'axios'
-import { List } from './layout-components/List';
-import { ActListItem } from './layout-components/ActListItem';
+import { List } from './components/layout/List';
+import { ActListItem } from './components/layout/ActListItem';
+import { AddBeat } from './components/AddBeat';
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+      <AddBeat />
       {acts && <List items={acts} resourceName="acts" itemComponent={ActListItem} />}
         
     </>
