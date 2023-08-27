@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Input } from "./atomic/Input";
 import { FormProvider, useForm } from "react-hook-form";
+import { Button } from "./atomic/Button";
 
 export const AddBeat = ({onSave}) => {
     const [text, setText] = useState('');
@@ -19,6 +20,7 @@ export const AddBeat = ({onSave}) => {
 
     return (
         <FormProvider {...methods}>
+            <h2>Add a Beat</h2>
         <form onSubmit={e => e.preventDefault()}
         noValidate
         autoComplete="off"
@@ -60,7 +62,7 @@ export const AddBeat = ({onSave}) => {
             />
             
             
-            <input type="submit" className="" value="Save Beat" />
+            <Button type="submit" className="" text="Save Beat" />
         </form>
         </FormProvider>
       )

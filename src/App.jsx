@@ -4,6 +4,7 @@ import axios from 'axios'
 import { List } from './components/layout/List';
 import { ActListItem } from './components/layout/ActListItem';
 import { AddBeat } from './components/AddBeat';
+import { Modal } from './components/layout/Modal';
 
 
 
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <>
-      <AddBeat />
+      
       {acts && <List items={acts} resourceName="acts" itemComponent={ActListItem} />}
         
     </>
