@@ -18,6 +18,25 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@font-face {
+  font-family: 'JazzText';
+  src: url('./assets/') format('woff2'),
+      url('./assets/JazzText-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+#root {
+  overflow-x: hidden;
+  margin-top: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'JazzText';
+  text-align: left;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

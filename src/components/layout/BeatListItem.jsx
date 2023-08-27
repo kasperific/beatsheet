@@ -2,8 +2,9 @@ import { FaPencilAlt, FaTimes } from 'react-icons/fa';
 import { Heading } from '../atomic/Heading';
 import { useState } from 'react';
 import axios from 'axios';
-import { Modal } from './Modal';
 import { AddBeat } from '../AddBeat';
+import Modal from '@mui/joy/Modal'
+import ModalDialog from '@mui/joy/ModalDialog'
 
 export const BeatListItem = ({ beat }) => {
     const { name, time, content, cameraAngle, notes, id } = beat
@@ -33,7 +34,7 @@ export const BeatListItem = ({ beat }) => {
         <>
             <div className='p-5 bg-fuchsia-300 border relative text-left'>
                 <div className='absolute right-0 top-0 flex'>
-                    <p onClick={() => handleDelete(id)}><FaPencilAlt  className="m-2 hover:text-blue-500" /></p>
+                    <p onClick={() => handleDelete(id)}><FaPencilAlt className="m-2 hover:text-blue-500" /></p>
                     <p><FaTimes onClick={() => handleEdit(id)} className="m-2 hover:text-blue-500" /></p>
                 </div>
 
@@ -43,11 +44,16 @@ export const BeatListItem = ({ beat }) => {
                 <p><strong>Camera Angle:</strong> {cameraAngle}</p>
                 <p><strong>Notes:</strong> {notes}</p>
             </div>
-            <Modal
-                showModal={showModal}
-                onClose={() => setShowModal(false)}>
+            <Modal open={showModal} onClose={() => setShowModal(false)}>
+                <ModalDialog
+                    aria-labelledby="Add a New Beat"
+                    variant="soft"
+                    size="md"
+                >
                     <AddBeat id={id} />
+                </ModalDialog>
             </Modal>
+            
         </>
     );
 }

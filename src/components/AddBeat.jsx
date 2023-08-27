@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "./atomic/Input";
 import { FormProvider, useForm } from "react-hook-form";
 import { Button } from "./atomic/Button";
 import { Heading } from "./atomic/Heading";
 import axios from "axios";
 
-export const AddBeat = ({ onSave, id }) => {
+export const AddBeat = ({ setShowModal, showModal, id }) => {
     const [text, setText] = useState('');
     const [time, setTime] = useState('');
     const [content, setContent] = useState('');
     const [cameraAngle, setCameraAngle] = useState('');
     const [notes, setNotes] = useState('');
+    const [errorMsg, setErrorMsg] = useState("");
+    const [error, setError] = useState(false);
+
 
     const methods = useForm()
 
     console.log(id)
-    const { register, handleSubmit, errors, control, setError } = useForm()
+    const { handleSubmit } = useForm()
 
 
     const onSubmit = methods.handleSubmit(data => {
@@ -24,10 +27,10 @@ export const AddBeat = ({ onSave, id }) => {
         axios.post(`api/acts/${id}/beats`, data)
             .then(resp => {
                 console.log(resp.data)
-                // close the modal
+                setShowModal(false)
+                console.log(showModal)
                 // let parent know data has been updated
-                
-                // setBeats(resp.data)
+
             }).catch(error => {
                 if (error.response || error.request) {
                     setErrorMsg("There appears to be a problem. Please try again later!")
@@ -36,8 +39,6 @@ export const AddBeat = ({ onSave, id }) => {
                     setErrorMsg("Not a thing!")
                 }
             })
-        // methods.reset()
-        // setSuccess(true)
     })
 
     return (
