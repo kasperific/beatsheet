@@ -45,7 +45,7 @@ export const ActListItem = ({ acts }) => {
       <Heading className="mb-8" level={2}>Act {id}: {name}</Heading>
       <Gallery>
         <List items={beats} resourceName="beat" itemComponent={BeatListItem} />
-        <Button text="Add a Beat" onClick={() => setShowModal(true)}/>
+        <Button className="rounded-full h-48 w-48 self-center" text="Add a New Beat" onClick={() => setShowModal(true)}/>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
         <ModalDialog
           aria-labelledby="basic-modal-dialog-title"

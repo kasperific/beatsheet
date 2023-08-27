@@ -35,8 +35,9 @@ function App() {
 
   return (
     <>
-      <Heading level={1}>Create a Beatsheet</Heading>
-      <main className="max-w-screen-xl text-center mx-auto my-0 p-8">
+      <Heading className="mb-8" level={1}>Create a Beatsheet</Heading>
+      <Button text="Add an Act" />
+      <main className="max-w-screen-xl text-center mx-auto my-0 px-8 pb-8">
         {acts && <List items={acts} resourceName="acts" itemComponent={ActListItem} />}
       </main>
     </>
