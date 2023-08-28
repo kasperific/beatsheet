@@ -26,7 +26,7 @@ export const ActListItem = ({ acts }) => {
           setErrorMsg("There appears to be a problem. Please try again later!")
         } else {
           setError(true)
-          setErrorMsg("Nothing to see here!")
+          setErrorMsg("Not found!")
         }
       })
   }, [showModal, setShowModal])
@@ -39,7 +39,7 @@ export const ActListItem = ({ acts }) => {
         {beats.length  &&
           <>
             <List items={beats} resourceName="beat" itemComponent={BeatListItem} />
-            <Button className="rounded-full h-48 w-48 self-center" text="Add a New Beat" onClick={() => setShowModal(true)} />
+            <Button className="rounded-full bg-fuchsia-500 hover:bg-fuchsia-400 h-48 w-48 self-center" text="Add a New Beat" onClick={() => setShowModal(true)} />
           </>
         }
         <Modal open={showModal} onClose={() => setShowModal(false)}>

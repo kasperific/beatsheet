@@ -37,7 +37,7 @@ export const Gallery = ({ children }) => {
                 }}
                 aria-label="right arrow"
             />
-            <div class="grid overflow-x-scroll justify-start gap-x-8 grid-cols-[repeat(3,275px)] md:grid-cols-[repeat(3,300px)] grid-flow-col auto-cols-[300px] md:auto-cols-[300px] w-full" ref={elementRef}>
+            <div className="grid overflow-x-scroll justify-start gap-x-8 grid-cols-[repeat(3,275px)] md:grid-cols-[repeat(3,300px)] grid-flow-col auto-cols-[300px] md:auto-cols-[300px] pb-8 w-full" ref={elementRef}>
                 {children}
             </div>
         </>

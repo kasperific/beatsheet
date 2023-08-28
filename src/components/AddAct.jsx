@@ -6,9 +6,6 @@ import { Heading } from "./atomic/Heading";
 import axios from "axios";
 
 export const AddAct = ({ setShowModal, id, showModal }) => {
-    const [text, setText] = useState('');
-    const [errorMsg, setErrorMsg] = useState("");
-    const [error, setError] = useState(false);
 
 
     const methods = useForm()
@@ -33,10 +30,9 @@ export const AddAct = ({ setShowModal, id, showModal }) => {
                 // setBeats(resp.data)
             }).catch(error => {
                 if (error.response || error.request) {
-                    setErrorMsg("There appears to be a problem. Please try again later!")
+                    console.log("error",error)
                 } else {
-                    setError(true)
-                    setErrorMsg("Not a thing!")
+                    console.log("other error",error)
                 }
             })
     })
@@ -53,7 +49,6 @@ export const AddAct = ({ setShowModal, id, showModal }) => {
                     label="Act Name"
                     type="text"
                     id="name"
-                    // defaultValue=
                     placeholder="Act name"
                 />
                 

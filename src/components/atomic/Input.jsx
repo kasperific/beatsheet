@@ -10,6 +10,7 @@ export const Input = ({
   type,
   id,
   placeholder,
+  defaultValue,
   validation,
   multiline,
   className,
@@ -23,7 +24,7 @@ export const Input = ({
   const isInvalid = isFormInvalid(inputErrors)
 
   const input_tailwind =
-    'p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60'
+    'p-3 mb-4 font-medium w-full border border-slate-300 dark:text-white'
 
   return (
     <div className={cn('flex flex-col w-full gap-2', className)}>
@@ -53,6 +54,7 @@ export const Input = ({
           id={id}
           type={type}
           className={cn(input_tailwind)}
+          defaultValue={defaultValue}
           placeholder={placeholder}
           {...register(name, validation)}
         />
