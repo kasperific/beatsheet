@@ -48,7 +48,7 @@ export const BeatListItem = ({ beat }) => {
     return (
         <>
             <div className='p-5 bg-fuchsia-300 border relative text-left shadow-[5px_5px_0px_1px_rgb(200,200,200)]'>
-                <div className='absolute right-6 top-6 flex'>
+                <div className='absolute right-5 top-6 flex'>
                     <p onClick={() => handleEdit(id)}><FaPencilAlt className="mr-3 hover:text-blue-500" /></p>
                     <p><FaTimes onClick={() => handleDelete(id)} className=" hover:text-blue-500" /></p>
                 </div>
